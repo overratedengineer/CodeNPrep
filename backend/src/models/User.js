@@ -6,9 +6,7 @@ const userschema = new Schema({
        required : true
     },
     email :{ 
-        type :String,
-         required : true,
-         unique:true
+        type :String
     },
     profileImage:{
         type:String,

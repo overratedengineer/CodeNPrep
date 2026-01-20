@@ -8,9 +8,11 @@ function App() {
   return (
     <>
        <h1>Welcome to the website</h1>
-       <SignInButton mode='modal' />
+       <SignInButton mode="modal">
+  <button>Sign in</button>
+</SignInButton>
     </>
   )
 }
 
-export default App
+export default App;
