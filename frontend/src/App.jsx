@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { SignInButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignInButton, SignOutButton, UserProfile } from "@clerk/clerk-react";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,9 +8,17 @@ function App() {
   return (
     <>
        <h1>Welcome to the website</h1>
-       <SignInButton mode="modal">
-  <button>Sign in</button>
-</SignInButton>
+
+       <SignedOut><SignInButton mode="modal">
+        <button>Sign in</button>
+      </SignInButton></SignedOut>
+      
+      <SignedIn>
+        <SignOutButton>
+          <button>Sign Out</button>
+        </SignOutButton>
+        </SignedIn>
+        <UserProfile/>
     </>
   )
 }
