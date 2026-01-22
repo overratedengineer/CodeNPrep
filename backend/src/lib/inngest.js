@@ -36,11 +36,10 @@ const deleteUserFromDB = inngest.createFunction(
   async ({ event }) => {
     await connectDB();
 
-   
-    console.log("🔥 DELETE FUNCTION HIT");
-    console.log("🔥 RAW EVENT:", JSON.stringify(event, null, 2));
+    const { id } = event.data;
+    await User.deleteOne({ clerkId: id });
 
-    return;
+    await deleteStreamUser(id.toString());
   }
 );
 
